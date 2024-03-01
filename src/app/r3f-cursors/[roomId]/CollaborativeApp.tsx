@@ -18,7 +18,6 @@ export function CollaborativeApp() {
       <group
         onPointerMove={(event) => {
           const [x, y] = event.point.toArray();
-
           updateMyPresence({
             cursor: { x, y },
           });

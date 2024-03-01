@@ -3,7 +3,7 @@
 import { Canvas } from "@react-three/fiber";
 import { useUpdateMyPresence } from "@/liveblocks.config";
 import { useRef } from "react";
-import { Cursors } from "./Cursors";
+import { CursorLines } from "./CursorLines";
 
 export function CollaborativeApp() {
   const updateMyPresence = useUpdateMyPresence();
@@ -18,7 +18,6 @@ export function CollaborativeApp() {
       <group
         onPointerMove={(event) => {
           const [x, y] = event.point.toArray();
-
           updateMyPresence({
             cursor: { x, y },
           });
@@ -27,10 +26,10 @@ export function CollaborativeApp() {
         <ambientLight intensity={0.1} />
         <directionalLight color="#fff" position={[1, 2, 3]} />
         <mesh>
-          <planeGeometry args={[10, 6, 10]} />
-          <meshStandardMaterial color="#555" />
+          <planeGeometry args={[100, 100, 10]} />
+          <meshStandardMaterial color="#333" />
         </mesh>
-        <Cursors />
+        <CursorLines />
       </group>
     </Canvas>
   );
