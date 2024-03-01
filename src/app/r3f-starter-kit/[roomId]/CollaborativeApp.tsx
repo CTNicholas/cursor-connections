@@ -28,7 +28,15 @@ export function CollaborativeApp() {
         <directionalLight color="#fff" position={[1, 2, 3]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
-        <Html position={[-5, 0, -20]} transform occlude>
+        <Html position={[8, 2, -20]} transform occlude>
+          <Tablet />
+        </Html>
+        <Html
+          position={[-18.5, -8, -16]}
+          rotation={[0, 0.6, 0]}
+          transform
+          occlude
+        >
           <Tablet />
         </Html>
         <Cursors />
