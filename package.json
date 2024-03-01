@@ -12,6 +12,7 @@
     "@liveblocks/client": "^1.10.0",
     "@liveblocks/node": "^1.10.0",
     "@liveblocks/react": "^1.10.0",
+    "@react-three/drei": "^9.99.5",
     "@react-three/fiber": "^8.15.16",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
