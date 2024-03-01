@@ -1,9 +1,33 @@
 "use client";
 
-import { useOthers } from "@/liveblocks.config";
+import { useOthers, useUpdateMyPresence } from "@/liveblocks.config";
+import { Cursors } from "@/components/Cursors";
+import { CursorLines } from "@/components/CursorLines";
 
 export function CollaborativeApp() {
-  const others = useOthers();
+  const updateMyPresence = useUpdateMyPresence();
 
-  return <div>There are {others.length} other people online.</div>;
+  return (
+    <main
+      style={{ width: "100vw", height: "100vh", background: "black" }}
+      onPointerMove={(event) => {
+        // Update the user cursor position on every pointer move
+        updateMyPresence({
+          cursor: {
+            x: Math.round(event.clientX),
+            y: Math.round(event.clientY),
+          },
+        });
+      }}
+      // onPointerLeave={() =>
+      //   // When the pointer goes out, set cursor to null
+      //   updateMyPresence({
+      //     cursor: null,
+      //   })
+      // }
+    >
+      <Cursors />
+      <CursorLines />
+    </main>
+  );
 }
