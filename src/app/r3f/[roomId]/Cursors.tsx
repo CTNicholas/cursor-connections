@@ -6,7 +6,7 @@ export function Cursors() {
   return others.map(({ connectionId, presence }) => (
     <mesh
       key={connectionId}
-      position={[presence.cursor.x * 2, presence.cursor.y * 2, 1]}
+      position={[presence.cursor.x, presence.cursor.y, 1]}
       rotation={[-1.5, 0, -0.1]}
     >
       <coneGeometry args={[0.3, 0.6, 50]} />
