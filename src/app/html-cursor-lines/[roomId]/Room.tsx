@@ -12,7 +12,7 @@ export default function Room({ children }: { children: ReactNode }) {
   return (
     <RoomProvider
       id={roomId as string}
-      initialPresence={{ cursor: { x: -10, y: -10 }}}
+      initialPresence={{ cursor: { x: -10, y: -10 }, color: "" }}
       initialStorage={{}}
     >
       <ClientSideSuspense fallback={<Loading />}>
